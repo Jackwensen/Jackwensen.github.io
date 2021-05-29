@@ -22,10 +22,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="眼要看远，脚要近迈。">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Jackson&#39;s Blog">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Jackson&#39;s Blog">
+<meta property="og:description" content="眼要看远，脚要近迈。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Bai JW">
 <meta name="twitter:card" content="summary">
@@ -97,6 +99,7 @@
       <h1 class="site-title">Jackson's Blog</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">时间</p>
   </div>
 
   <div class="site-nav-right">
@@ -122,17 +125,22 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">0</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">1</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">0</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">1</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
 
   </li>
   </ul>
@@ -162,12 +170,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/29/Hello-World/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/don.jpg">
+      <meta itemprop="name" content="Bai JW">
+      <meta itemprop="description" content="眼要看远，脚要近迈。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jackson's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/29/Hello-World/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-29 22:01:19" itemprop="dateCreated datePublished" datetime="2021-05-29T22:01:19+08:00">2021-05-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BB%BA%E7%AB%99/" itemprop="url" rel="index"><span itemprop="name">建站</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>286</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Hello-My-Blog"><a href="#Hello-My-Blog" class="headerlink" title="Hello My Blog"></a>Hello My Blog</h1><p>终于搭好了一个个人博客，感觉还是挺有意思的，做着玩而已，应该没什么人会看到hhh<br><br></p>
+<h1 id="打算干什么"><a href="#打算干什么" class="headerlink" title="打算干什么"></a>打算干什么</h1><p>目前也没想好博客用来干什么，毕竟生活中各种记录的都有地方放了，可能后面会逼着自己写点东西，比如</p>
+<ul>
+<li>随便记录</li>
+<li>学习笔记</li>
+<li>感想</li>
+<li>计划</li>
+</ul>
+<p>但愿能坚持下去，不过即使好久不更新也不意外hhhhhh<br><br></p>
+<h1 id="希望学到什么"><a href="#希望学到什么" class="headerlink" title="希望学到什么"></a>希望学到什么</h1><p>开通博客的一个好处是可以学一学markdown，顺便能学习一下博客相关的技术，前端的技术还真是有趣呢~</p>
+<p>希望能通过这个博客逼着自己去思考和记录一些东西，感觉近年来自己的想法变少了，思考也越来越少，脑子越来越僵化了，这可不是个好的迹象。</p>
+<p>最主要的是希望能养成一个思考、记录的好习惯。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/29/%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%9D%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/don.jpg">
       <meta itemprop="name" content="Bai JW">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="眼要看远，脚要近迈。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -195,7 +295,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>197</span>
+              <span>174</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -214,9 +314,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="测试模板blog"><a href="#测试模板blog" class="headerlink" title="测试模板blog"></a>测试模板blog</h1><h2 id="测试模板"><a href="#测试模板" class="headerlink" title="测试模板"></a>测试模板</h2><h3 id="测试模板-1"><a href="#测试模板-1" class="headerlink" title="测试模板"></a>测试模板</h3><h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><hr>
-<hr>
-<hr>
+          <h1 id="测试模板blog"><a href="#测试模板blog" class="headerlink" title="测试模板blog"></a>测试模板blog</h1><h2 id="测试模板"><a href="#测试模板" class="headerlink" title="测试模板"></a>测试模板</h2><hr>
 <p><del>BAIDU.COM</del></p>
 <p><u>带下划线文本</u></p>
 <blockquote>
@@ -230,85 +328,14 @@
 </li>
 <li>第二项：<ul>
 <li>第二项嵌套的第一个元素</li>
-<li>第二项嵌套的第二个元素</li>
 </ul>
 </li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&#x27;RUNOOB&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>这是一个链接 <a target="_blank" rel="noopener" href="https://www.runoob.com/">菜鸟教程</a></p>
+<p>链接 <a target="_blank" rel="noopener" href="https://www.runoob.com/">教程</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/">https://www.runoob.com</a></p>
+<hr>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/29/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/don.jpg">
-      <meta itemprop="name" content="Bai JW">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jackson's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/29/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="post-title-link" itemprop="url">第一篇文章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-29 14:07:23" itemprop="dateCreated datePublished" datetime="2021-05-29T14:07:23+08:00">2021-05-29</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
       
     </div>
 
@@ -384,7 +411,7 @@
     <img class="site-author-image" itemprop="image" alt="Bai JW"
       src="/images/don.jpg">
   <p class="site-author-name" itemprop="name">Bai JW</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">眼要看远，脚要近迈。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -394,6 +421,18 @@
           <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
