@@ -177,7 +177,7 @@ body {
 body {
   background: var(--body-bg-color);
   color: var(--text-color);
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'EB Garamond, Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
   line-height: 2;
 }
@@ -193,28 +193,28 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'EB Garamond, Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   line-height: 1.5;
   margin: 20px 0 15px;
 }
 h1 {
-  font-size: 1.5em;
+  font-size: 1.355em;
 }
 h2 {
-  font-size: 1.375em;
+  font-size: 1.23em;
 }
 h3 {
-  font-size: 1.25em;
+  font-size: 1.105em;
 }
 h4 {
-  font-size: 1.125em;
+  font-size: 0.98em;
 }
 h5 {
-  font-size: 1em;
+  font-size: 0.855em;
 }
 h6 {
-  font-size: 0.875em;
+  font-size: 0.73em;
 }
 p {
   margin: 0 0 20px 0;
@@ -381,6 +381,31 @@ td {
 .toggle.toggle-close .toggle-line-last {
   transform: rotate(45deg);
   top: -5px;
+}
+.highlight-container {
+  position: relative;
+}
+.highlight-container:hover .copy-btn,
+.highlight-container .copy-btn:focus {
+  opacity: 1;
+}
+.copy-btn {
+  color: #333;
+  cursor: pointer;
+  line-height: 1.6;
+  opacity: 0;
+  padding: 2px 6px;
+  position: absolute;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  font-size: 0.8125em;
+  right: 4px;
+  top: 8px;
 }
 .highlight,
 pre {
@@ -977,7 +1002,7 @@ pre .javascript .function {
   border-bottom: none;
   color: var(--brand-color);
   display: inline-block;
-  line-height: 1.375em;
+  line-height: 1.5em;
   padding: 0 40px;
   position: relative;
 }
@@ -985,8 +1010,8 @@ pre .javascript .function {
   color: var(--brand-hover-color);
 }
 .site-title {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 1.375em;
+  font-family: 'Long Cang', 'EB Garamond, Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 1.5em;
   font-weight: normal;
   margin: 0;
 }
@@ -1172,10 +1197,13 @@ pre .javascript .function {
   margin-bottom: 10px;
   margin-right: 10px;
   vertical-align: middle;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff98ba;
+  background: #388c1c;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1520,7 +1548,7 @@ pre .javascript .function {
   }
 }
 .post-body {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'EB Garamond, Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
@@ -1563,6 +1591,14 @@ pre .javascript .function {
 }
 .use-motion .collection-header {
   opacity: 0;
+}
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+}
+.post-body p a:hover {
+  color: #0477ab;
+  text-decoration: underline;
 }
 .posts-collapse {
   margin-left: 35px;
@@ -1818,7 +1854,7 @@ pre .javascript .function {
 }
 .posts-expand .post-meta {
   color: #999;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'EB Garamond, Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 0.75em;
   margin: 3px 0 60px 0;
   text-align: center;
@@ -1969,6 +2005,13 @@ pre .javascript .function {
 }
 #qr p {
   text-align: center;
+}
+.post-copyright {
+  background: var(--card-bg-color);
+  border-left: 3px solid #ff2a2a;
+  list-style: none;
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
 }
 .category-all-page .category-all-title {
   text-align: center;
@@ -2398,7 +2441,6 @@ ul.breadcrumb li + li:last-child {
 }
 .links-of-author-item {
   margin: 5px 0 0;
-  width: 50%;
 }
 .links-of-author-item a,
 .links-of-author-item span.exturl {
@@ -2558,5 +2600,163 @@ ul.breadcrumb li + li:last-child {
   }
   .pagination {
     margin: 8px 0 0;
+  }
+}
+/************************* Header **************************/
+body {
+  background: url("/images/background.png");
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+.header,
+.main-inner {
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .header,
+  .main-inner {
+    margin-top: 0;
+  }
+}
+/* 圆角 */
+.header-inner,
+.sidebar-inner {
+  border-radius: 8px;
+}
+/************************ Sidebar **************************/
+/* sidebar-标题背景 */
+.site-brand-container {
+  background: url("/images/site-brand.png");
+  background-position: 70% 20%;
+  background-size: cover;
+}
+/* sidebar-标题 */
+.site-title {
+  font-weight: bold;
+}
+/* sidebar-副标题 */
+.site-subtitle {
+  font-weight: bold;
+  font-family: "EB Garamond", STKaiti, KaiTi, SimKai, DFKai-SB, "Noto Serif SC";
+  color: var(--brand-color);
+  font-size: 1em;
+}
+/* sidebar-二级菜单圆角 */
+.sub-menu {
+  border-radius: 8px !important;
+}
+/************************** Post ***************************/
+/* post-文章卡片圆角 */
+.post-block,
+.post-block+.post-block {
+  border-radius: 8px !important;
+}
+/* post-首页文章标题 */
+.index .post-title {
+  text-align: left;
+  border-left: #3f5973 8px solid;
+  padding-left: 10px;
+}
+/* post-首页文章信息 */
+.index .post-meta {
+  justify-content: left;
+}
+/* post-文章标题 */
+.posts-expand .post-title {
+  font-size: 1.35em;
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  .posts-expand .post-title {
+    margin-top: 10px;
+  }
+}
+/* post-文章信息 */
+.posts-expand .post-header {
+  margin-bottom: 30px;
+}
+/* post-段后距 */
+p {
+  margin-bottom: 12px;
+}
+/* post-正文字号 */
+.post-body {
+  font-size: 1em;
+}
+/* post-标签选择卡片加粗 */
+.post-body .tabs ul.nav-tabs li.tab a {
+  font-weight: bold;
+}
+/* post-图片标题 */
+.post-body .image-caption {
+  margin: 0 auto 15px;
+}
+/* post-图片阴影 */
+.posts-expand .post-body img {
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.4);
+}
+/* post-引用与 note 字体 */
+blockquote p,
+.post-body .note {
+  font-family: "EB Garamond", STKaiti, KaiTi, SimKai, DFKai-SB, "Noto Serif SC";
+}
+/* post-行内代码 */
+code {
+  font-size: 0.85em;
+  background: none;
+  color: var(--text-color);
+}
+/* post-思源宋体列表打叉修复 */
+li {
+  text-align: left;
+}
+/************************ Button ***************************/
+/* button-back2top */
+.back-to-top {
+  background: #3f5973;
+  opacity: 0.8;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 1em;
+}
+/* 修改选中字符的颜色 */
+::selection {
+  background: rgba(0,149,255,0.2);
+  color: var(--blockquote-color);
+}
+/************************ Overview *************************/
+/* categories */
+@media (max-width: 767px) {
+  .category-all-page .category-list-item {
+    margin: 10px 40px;
+  }
+  .category-all-page .category-all ul {
+    list-style-type: disc;
+  }
+}
+@media (min-width: 768px) {
+  .category-all-page .category-list-item {
+    margin: 10px 12px;
+  }
+  ul.category-list {
+    text-align: center;
+  }
+  li.category-list-item {
+    display: inline-block;
+  }
+  li.category-list-item a {
+    line-height: 5;
+    word-break: keep-all;
+    padding: 10px 15px;
+    font-weight: bold;
+    color: #fff;
+    background: #3f5973;
+    border-bottom: none;
+    border-radius: 15px;
+  }
+  li.category-list-item a:hover {
+    text-decoration: none;
   }
 }
