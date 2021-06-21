@@ -247,7 +247,9 @@
         <h2 id="windows的wsl下命令行启动typora"><a href="#windows的wsl下命令行启动typora" class="headerlink" title="windows的wsl下命令行启动typora"></a>windows的wsl下命令行启动typora</h2><p>编辑终端的配置文件，我用的是zsh，所以在.zshrc最后加入如下代码</p>
 <span id="more"></span>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 <span class="comment"># quick start typora</span></span><br><span class="line">2 <span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="string">&#x27;/mnt/e/Program Files/Typora&#x27;</span></span><br><span class="line">3 <span class="built_in">alias</span> typora=<span class="string">&#x27;typora.exe &#x27;</span></span><br></pre></td></tr></table></figure>
-<p>第1行备注随意<br/><br>第2行替换为自己电脑中typora的安装目录<br/><br>第3行的作用为简化启动typora的命令，可加可以不加，也可随意替换为熟悉的名字</p>
+<p>第1行备注随意</p>
+<p>第2行替换为自己电脑中typora的安装目录</p>
+<p>第3行的作用为简化启动typora的命令，可加可以不加，也可随意替换为熟悉的名字</p>
 <p>搞定后输入  <code>source ~/.zshrc</code><br>即可在命令行通过 <code>typora xxx.md</code> 直接使用typora编辑markdown文档</p>
 
     </div>
