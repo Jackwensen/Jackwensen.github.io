@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/pipi-3232.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/pipi-1616.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-corner-indicator.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="CS50笔记 0-4入门两年多后重新过一遍基础，有些很简单的就不记录了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cs50笔记-week 0-4">
+<meta property="og:url" content="http://example.com/2021/06/21/4-cs50-notes-1/index.html">
+<meta property="og:site_name" content="Jackson&#39;s Blog">
+<meta property="og:description" content="CS50笔记 0-4入门两年多后重新过一遍基础，有些很简单的就不记录了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-21T14:04:37.000Z">
+<meta property="article:modified_time" content="2021-07-03T14:31:00.000Z">
+<meta property="article:author" content="Bai JW">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/06/21/4-cs50-notes-1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>cs50笔记-week 0-4 | Jackson's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Jackson's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">随便玩玩</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>历史文章<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/21/4-cs50-notes-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/don.jpg">
+      <meta itemprop="name" content="Bai JW">
+      <meta itemprop="description" content="眼要看远，脚要近迈。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jackson's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          cs50笔记-week 0-4
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-21 22:04:37" itemprop="dateCreated datePublished" datetime="2021-06-21T22:04:37+08:00">2021-06-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-03 22:31:00" itemprop="dateModified" datetime="2021-07-03T22:31:00+08:00">2021-07-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS50/" itemprop="url" rel="index"><span itemprop="name">CS50</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="CS50笔记-0-4"><a href="#CS50笔记-0-4" class="headerlink" title="CS50笔记 0-4"></a>CS50笔记 0-4</h2><p>入门两年多后重新过一遍基础，有些很简单的就不记录了。</p>
+<span id="more"></span>
+
+<h2 id="week-0-Scratch"><a href="#week-0-Scratch" class="headerlink" title="week 0 Scratch"></a>week 0 Scratch</h2><ul>
+<li><p>把计算机看作一个解决问题的黑箱。</p>
+</li>
+<li><p>计算机使用二进制存储、传输信息，本质上是因为计算机由无数个晶体管构成，晶体管只有 开/关 两种形式。</p>
+</li>
+<li><p>计算机显示文字则使用ASCII（后随着普及，发展到Unicode码）码进行映射，每个字符甚至emoji都用二进制表示。</p>
+</li>
+<li><p>图、视频、音频都是通过二进制存储，涉及到颜色最常见的是RGB，255 255 255。</p>
+<ul>
+<li>像素-&gt;图片-&gt;视频以及音频，以及各种格式的文件，都是基于人们一致认同的组织二进制比特的标准，来进行展示的。</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-1-C"><a href="#week-1-C" class="headerlink" title="week 1 C"></a>week 1 C</h2><ul>
+<li>C语言通过编译将C代码编译成机器可懂的二进制文件，通过<code>./</code>执行而打开编辑器看到乱码是因为编辑器会对二进制数字进行类似ASCII的映射。</li>
+<li>C语言代码需要包含用到函数的头文件，比如<code>stdio.h</code>和本课程常用的<code>cs50.h</code>等。</li>
+<li>Linux常用的命令如<code>ls rm mv mkdir cd</code>等。</li>
+<li>基本变量bool，char %c, double float %f,  int %i, long %l,  string %s。</li>
+<li>在main后出现的函数需要在main前进行声明。</li>
+<li>变量使用二进制存储，bit长度有限，所以会有溢出和精度不够的问题。</li>
+</ul>
+<h2 id="week-2-Arrays"><a href="#week-2-Arrays" class="headerlink" title="week 2 Arrays"></a>week 2 Arrays</h2><ul>
+<li>编译C语言的编译器相关问题。如GCC clang make cmake等。简单理解：<code>gcc和clang是两个不同的编译器，而make和cmake是搭配编译器来方便用户进行多文件编译而发明的工具。</code></li>
+<li>编译过程：预处理，编译，汇编，链接。</li>
+<li>存储：bool&amp;char 1字节，double long 8字节，float int 4字节。</li>
+<li>char型变量既可以以字符输出，又可以以数字输出。</li>
+<li>string型可以看作char型数组。</li>
+<li>命令行参数<code>int main(int argc, string argv[])</code>，其中<code>argc</code>是参数个数，<code>argv[]</code>是参数数组，<code>return</code>0或者1，可通过<code>$?</code>查看。</li>
+<li>由于char变量使用ASCII等编码形式，可以通过加密算法保护传输的数据。</li>
+</ul>
+<h2 id="week-3-Algorithms"><a href="#week-3-Algorithms" class="headerlink" title="week 3 Algorithms"></a>week 3 Algorithms</h2><ul>
+<li><p>大O，大Ω，一个平均复杂度，一个最快情况下复杂度</p>
+</li>
+<li><p>搜索算法：线性搜索$O(n^2$)  $\Omega(1)$，二分搜索$O(log_2n$)  $\Omega(1)$，二分搜索需要提前排序</p>
+</li>
+<li><p>结构体</p>
+<ul>
+<li><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="built_in">string</span> name;</span><br><span class="line">    <span class="built_in">string</span> number;</span><br><span class="line">&#125;</span><br><span class="line">person;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>排序算法：选择排序$O(n^2)$ ，冒泡排序$O(n^2)$  $\Omega(n)$，归并排序$$O(nlog_2n)$$ $\Omega(nlog_2n)$  </p>
+</li>
+<li><p>递归</p>
+</li>
+</ul>
+<h2 id="week-4-Memory"><a href="#week-4-Memory" class="headerlink" title="week 4 Memory"></a>week 4 Memory</h2><ul>
+<li><p>16进制即0x 0-F，相当于4位二进制，所以两个16进制位相当于一个字节。</p>
+</li>
+<li><p>C中变量、地址、指针</p>
+<ul>
+<li><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">50</span>;</span><br><span class="line">  	<span class="built_in">printf</span>(<span class="string">&quot;%i\n&quot;</span>, n);   <span class="comment">//50</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%p\n&quot;</span>, &amp;n);  <span class="comment">//0x7ffd5a654a9c   &amp;操作符 代表取变量的地址</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%i\n&quot;</span>, *&amp;n); <span class="comment">//50               *操作符 代表去到指针指向的地址</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>指针</p>
+<ul>
+<li><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> n = <span class="number">50</span>;</span><br><span class="line">   <span class="keyword">int</span> *p = &amp;n;    <span class="comment">//指针变量p的值为n的地址</span></span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;%p\n&quot;</span>, p);  <span class="comment">//0x7ffc3ab5fa5c 指针p指向的int型变量n的地址</span></span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;%p\n&quot;</span>, &amp;p); <span class="comment">//0x7ffc3ab5fa50 指针变量p的地址</span></span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;%i\n&quot;</span>, *p); <span class="comment">//50 通过*操作符，获取指针p指向的地址的值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>字符串</p>
+<ul>
+<li><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cs50.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s = <span class="string">&quot;HI!&quot;</span>;     <span class="comment">//字符串变量s相当于一个指针 指向s[0]</span></span><br><span class="line"> <span class="comment">// char *s = &quot;HI!&quot;;      //与前一行效果相同</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, s);  	<span class="comment">//HI!</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%p\n&quot;</span>, s);  	<span class="comment">//0x402004</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, *s); 	<span class="comment">//H</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%p\n&quot;</span>, &amp;s[<span class="number">1</span>]);<span class="comment">//0x402005</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, s[<span class="number">1</span>]); <span class="comment">//I</span></span><br><span class="line">  </span><br><span class="line">	  <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, *s);		<span class="comment">//H</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, *(s+<span class="number">1</span>));<span class="comment">//I  这里s以地址的形式运算，所以可以直接取到第二个字母，常用的s[1]相当于*(s+1)的语法糖</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, *(s+<span class="number">2</span>));<span class="comment">//!</span></span><br><span class="line">  	<span class="comment">//如果在字符串长度外任意取值，会触发segmentation fault</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>由于字符串变量的地址属性还会引发很多有趣的特性，比如：比较两个字符串相等，改变赋值后字符串的内容会引发原字符串的改变等。所以，复制字符串需要通过malloc方法</p>
+</li>
+<li><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cs50.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctype.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *s = get_string(<span class="string">&quot;s: &quot;</span>);</span><br><span class="line">    <span class="keyword">char</span> *t = <span class="built_in">malloc</span>(<span class="built_in">strlen</span>(s) + <span class="number">1</span>);</span><br><span class="line">  </span><br><span class="line">	  <span class="keyword">if</span> (t == <span class="literal">NULL</span>) <span class="comment">//以防内存不足</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">		</span><br><span class="line">  	<span class="comment">// strcpy方法也可</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = <span class="built_in">strlen</span>(s); i &lt; n + <span class="number">1</span>; i++) <span class="comment">//别忘记字符串最后的/0</span></span><br><span class="line">    &#123;</span><br><span class="line">        t[i] = s[i]; <span class="comment">//*(t+i) = *(s+i)也可</span></span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">	  <span class="keyword">if</span> (<span class="built_in">strlen</span>(t) &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        t[<span class="number">0</span>] = <span class="built_in">toupper</span>(t[<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    t[<span class="number">0</span>] = <span class="built_in">toupper</span>(t[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;s: %s\n&quot;</span>, s);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;t: %s\n&quot;</span>, t);</span><br><span class="line">  </span><br><span class="line">  	<span class="built_in">free</span>(t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>垃圾变量：声明后没有赋值或没有分配内存。</p>
+</li>
+<li><p>计算机内存可分为四类存储空间：<strong>machine code</strong>，<strong>global variables</strong>，<strong>heap</strong>，<strong>stack</strong>。</p>
+<ul>
+<li><strong>机器代码</strong>部分是编译的程序的二进制代码。 运行程序时，该代码将加载到内存的“顶部”中。</li>
+<li><strong>全局变量</strong>是在程序中声明的变量。</li>
+<li><strong>堆</strong>部分是调用malloc为程序获得内存的空区。调用malloc时，则开始从顶部分配内存。⬇️<ul>
+<li>调用太多malloc并且不free，会导致堆溢出<strong>（heap overflow）</strong></li>
+</ul>
+</li>
+<li><strong>栈</strong>部分由程序中的函数使用，因为函数被调用，每调用一个函数就入栈以向上增长。⬆️<ul>
+<li>调用太多函数并不返回会导致栈溢出<strong>（stack overflow）</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>读取文件与传参数。</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Bai JW
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2021/06/21/4-cs50-notes-1/" title="cs50笔记-week 0-4">http://example.com/2021/06/21/4-cs50-notes-1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/21/3-commdline-notes/" rel="prev" title="配置记录">
+      <i class="fa fa-chevron-left"></i> 配置记录
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/03/5-cs50-notes-2/" rel="next" title="cs50笔记-week 5-8">
+      cs50笔记-week 5-8 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CS50%E7%AC%94%E8%AE%B0-0-4"><span class="nav-number">1.</span> <span class="nav-text">CS50笔记 0-4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#week-0-Scratch"><span class="nav-number">2.</span> <span class="nav-text">week 0 Scratch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#week-1-C"><span class="nav-number">3.</span> <span class="nav-text">week 1 C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#week-2-Arrays"><span class="nav-number">4.</span> <span class="nav-text">week 2 Arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#week-3-Algorithms"><span class="nav-number">5.</span> <span class="nav-text">week 3 Algorithms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#week-4-Memory"><span class="nav-number">6.</span> <span class="nav-text">week 4 Memory</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Bai JW"
+      src="/images/don.jpg">
+  <p class="site-author-name" itemprop="name">Bai JW</p>
+  <div class="site-description" itemprop="description">眼要看远，脚要近迈。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Jackwensen" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Jackwensen" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bai JW</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">9k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+</body>
+</html>
